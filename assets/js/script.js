@@ -1,8 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var lowercase = "abcdefghijklmnopqrstuvwxyz";
-var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var specialCharacters = "!@#$%^&*()_-+=?/.,<>;:~/*+-'";
 
@@ -12,26 +12,36 @@ function generatePassword(){
   console.log(passwordSize)
 
   if(passwordSize >= 8 && passwordSize <= 128){
-    var confirmLowerCase=confirm("Do you want lower case included in your password?");
-    console.log(confirmLowerCase);
-
-    var confirmUpperCase=confirm("Do you want upper case included in your password?");
+    var confirmLowerCaseLetters=confirm("Do you want lower case included in your password?");
+    var confirmUpperCaseLetters=confirm("Do you want upper case included in your password?");
     var confirmNumbers=confirm("Do you want numbers included in your password?");
     var confirmSpecialCharacters=confirm("Do you want special characters included in your password?");
 
     for(var i=0; i < passwordSize; i++){
     
-    if(confirmLowerCase  && savedPassword.length < passwordSize){
-      var randomIndex=Math.floor(Math.random() * lowercase.length)
+    if(confirmLowerCaseLetters  && savedPassword.length < passwordSize){
+      var randomIndex=Math.floor(Math.random() * lowercaseLetters.length)
 
-      savedPassword= savedPassword+lowercase[randomIndex]
+      savedPassword= savedPassword+lowercaseLetters[randomIndex]
       
     }
 
-    if(confirmUpperCase  && savedPassword.length < passwordSize){
-      var randomIndex=Math.floor(Math.random() * uppercase.length)
+    if(confirmUpperCaseLetters  && savedPassword.length < passwordSize){
+      var randomIndex=Math.floor(Math.random() * uppercaseLetters.length)
 
-      savedPassword= savedPassword+uppercase[randomIndex]
+      savedPassword= savedPassword+uppercaseLetters[randomIndex]
+    }
+
+    if(confirmNumbers  && savedPassword.length < passwordSize){
+      var randomIndex=Math.floor(Math.random() * numbers.length)
+
+      savedPassword= savedPassword+numbers[randomIndex]
+    }
+
+    if(confirmSpecialCharacters  && savedPassword.length < passwordSize){
+      var randomIndex=Math.floor(Math.random() * specialCharacters.length)
+
+      savedPassword= savedPassword+specialCharacters[randomIndex]
     }
    }
   }
