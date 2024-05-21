@@ -19,7 +19,7 @@ In this weeks chalenge we were required to modify starter code to create an appl
 
 This is the new and improved home page
 
-    ```md![Horiseon](https://github.com/Gonzo7725/Challenge1-Code-Refactoring/blob/main/assets/images/Screenshot%202023-12-18%20175011.png)```
+<img src="./assets/images/code generator.png">
 
 Direct link to website
 
